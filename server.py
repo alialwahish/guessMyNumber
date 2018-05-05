@@ -5,7 +5,8 @@ app.secret_key="myKey"
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    print session['randNum']
+    return render_template("index.html",hid=1)
 @app.route('/process',methods=['POST'])
 def process():
     
