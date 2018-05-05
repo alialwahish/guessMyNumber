@@ -1,0 +1,43 @@
+<h1>Welcom to Great Number Game</h1>
+<h2>I am thinking of a number between 1-100</h2>
+<h2>Take a guess</h2>
+{%if hid ==1%}
+            <style>#incTxt{display: none}</style>
+
+{% elif num == cop:%}
+<h2 id="incTxt">{{session['incTxt']}}</h2>
+
+    <style>#incTxt{background-color:green;color:white;
+    display: inline-block;
+    padding: 50px;
+    margin-left: 32%;
+   
+    }
+        </style>  
+{% elif num != cop:%}
+<h2 id="incTxt">{{session['incTxt']}}</h2>
+
+<style>#incTxt{background-color:red;color:white;
+        display: inline-block;
+        padding: 50px;
+       
+        margin-left: 37%
+        }
+            </style>
+
+
+{%endif%}
+
+<form action="/process" method="POST" >
+<input type="text" name="number" ><br>
+<input type="submit" name="submit" id="btn"></form>
+<a href="/reset"><input type="reset" name="reset" id="btn"></form></a>
+<style>
+        h1,h2{
+            text-align: center
+        }
+        form{
+            margin-left: 43%;
+        }
+        #btn{margin-left: 6%}
+</style>
